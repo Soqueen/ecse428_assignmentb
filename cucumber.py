@@ -49,11 +49,9 @@ def verify_product(step, expected_result):
 
 @step(u'Its quantity equal to "([^"]*)"')
 def verify_quantify(step, expected_result):
-    product_element = driver.find_element_by_xpath('//a[@href="' + base_url + '"]')
-    parent = product_element.find_element_by_xpath("..").find_element_by_xpath("..").find_element_by_xpath("..").find_element_by_xpath("..").find_element_by_xpath("..")
-    actual_result = parent.find_element_by_class_name
-    driver.fi
-driver.quit()
+    actual_result = driver.find_element_by_xpath('//a[@href="' + base_url + '"]/../../../../../*[@role="textbox"]').text
+    assert_equals(expected_result, actual_result)
+    driver.quit()
 
 
 # class ChromeTest(unittest.TestCase):
