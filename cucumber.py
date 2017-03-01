@@ -37,19 +37,19 @@ def add_quantity(step, quant):
     search_box.send_keys(quant)
     driver.find_element_by_id('isCartBtn_btn').click()
 
-@step(u'It will redirect to "your ebay shopping cart" page')
+@step(u'It will redirect to "([^"]*)" page')
 def redirect_to_cart(step, expected_result):
-    actual_result = driver.find_element_by_class_name("mb15 nowrap").text
+    actual_result = driver.find_element_by_xpath('//*[@id="PageTitle"]/h1').text
     assert_equals(expected_result, actual_result)
 
 @step(u'The "([^"]*)" is in the cart')
 def verify_product(step, expected_result):
-    actual_result = driver.find_element_by_xpath('//a[@href="'+base_url+'"]')
+    actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/a').text
     assert_equals(expected_result, actual_result)
 
 @step(u'Its quantity equal to "([^"]*)"')
 def verify_quantify(step, expected_result):
-    actual_result = driver.find_element_by_xpath('//a[@href="' + base_url + '"]/../../../../../*[@role="textbox"]').text
+    actual_result = driver.find_element_by_xpath('//*[@id="qty_6984146269"]').text
     assert_equals(expected_result, actual_result)
     driver.quit()
 

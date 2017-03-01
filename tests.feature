@@ -7,7 +7,7 @@ As a consumer I want to be able to place the Oster blender in my shopping cart s
     Given I am at ebay product page for the Oster blender "http://www.ebay.ca/itm/161728962861"
      When   I input a quantity of "2" and add to shopping cart
      Then   It will redirect to "Your eBay Shopping Cart" page
-     And    The "Oster White 8 Speed" is in the cart
+     And    The "Oster White 8 Speed Blender - BLSTMG-W00-033" is in the cart
      And    Its quantity equal to "2"
   
   Scenario: Place speaker 102-1550-ND in the shopping cart for a quantity at least 1 from the shopping cart page
