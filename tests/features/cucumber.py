@@ -49,48 +49,6 @@ def verify_product(step, expected_result):
 
 @step(u'Its quantity equal to "([^"]*)"')
 def verify_quantify(step, expected_result):
-    actual_result = driver.find_element_by_xpath('//*[@id="qty_6984146269"]').text
+    actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/../../../../../div[1]/div[2]/div/div[2]/div[1]/div/input').getAttribute("value")
     assert_equals(expected_result, actual_result)
     driver.quit()
-
-
-# class ChromeTest(unittest.TestCase):
-#     # Anything declared in setUp will be executed for all test cases
-#     def setUp(self):
-#         # clear database
-#         self.driver = webdriver.Chrome(DRIVER_DIR)
-#         self.base_url = 'http://www.ebay.ca/itm/161728962861'
-#
-#     def test_normal_flow(self):
-#         driver = self.driver
-#         driver.get(self.base_url)
-#
-#     def test_alternative_flow(self):
-#         driver = self.driver
-#         driver.get(self.base_url)
-#
-#     def test_error_flow(self):
-#         driver = self.driver
-#         driver.get(self.base_url)
-#
-#     def take_screen_shot(self, test_name):
-#         """
-#         Taking screen shot of the test result. The purpose is need when the test fail
-#         :param test_name: Name of screen shot
-#         :return:
-#         """
-#         now = datetime.datetime.now()
-#         directory = os.path.join(BASE_DIR, 'test_results_img', now.strftime("%Y-%m-%d"))
-#         if not os.path.exists(directory):
-#             os.makedirs(directory)
-#         image_name = '.'.join([test_name + now.strftime("_%H:%M:%S"), 'png'])
-#         return self.driver.save_screenshot(os.path.join(directory, image_name))
-#
-#     # Anything declared in tearDown will be executed for all test cases
-#     def tearDown(self):
-#         # Close the browser.
-#         self.driver.quit()
-
-#
-# if __name__ == "__main__":
-#     unittest.main()
