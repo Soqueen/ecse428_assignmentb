@@ -49,6 +49,7 @@ def verify_product(step, expected_result):
 
 @step(u'Its quantity equal to "([^"]*)"')
 def verify_quantify(step, expected_result):
-    actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/../../../../../div[1]/div[2]/div/div[2]/div[1]/div/input').getAttribute("value")
+    actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input').value
+    print actual_result
     assert_equals(expected_result, actual_result)
     driver.quit()
