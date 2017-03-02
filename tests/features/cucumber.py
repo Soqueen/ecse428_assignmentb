@@ -18,14 +18,13 @@ else:
 	driver_name = 'chromedriver_mac'
 
 DRIVER_DIR = os.path.join(BASE_DIR, "chrome_driver", driver_name)
-WAIT_TIME = 3  # wait time for browser to stay open for 3 seconds
 
 base_url = 'http://www.ebay.ca/itm/161728962861'
 driver = webdriver.Chrome(DRIVER_DIR)
 
 
 # 1. Normal Flow
-@step(u'I am at ebay product page for the Oster blender "([^"]*)"')
+@step(u'I am at the ebay product page for the Oster blender "([^"]*)"')
 def get_product_page(step, url):
 	driver.get(url)
 
@@ -50,13 +49,13 @@ def verify_product(step, expected_result):
 	assert_equals(expected_result, actual_result)
 
 
-@step(u'Its quantity equal to "([^"]*)"')
+@step(u'Its quantity is equal to "([^"]*)"')
 def verify_quantify(step, expected_result):
 	actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input').get_attribute('value')
 	assert_equals(expected_result, actual_result)
 	
 # 2. Alternative Flow
-@step(u'I am at shopping cart page "([^"]*)"')
+@step(u'I am at the shopping cart page "([^"]*)"')
 def get_to_cart_page(step,url):
 	driver.get(url)
 
@@ -75,7 +74,7 @@ def two_verify_quantify(step, expected_result):
 
 
 # 3. Error Flow
-@step(u'I am on ebay product page for the Oster blender "([^"]*)"')
+@step(u'I am on the ebay product page for the Oster blender "([^"]*)"')
 def c_get_product_page(step, url):
     driver.get(url)
 
