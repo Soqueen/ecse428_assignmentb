@@ -10,11 +10,11 @@ As a consumer I want to be able to place the Oster blender in my shopping cart s
      And    Its quantity equal to "2"
   
   Scenario: Update 'Oster White 8 Speed Blender - BLSTMG-W00-033' in the shopping cart for another quantity
-    Given   I am at "Your eBay Shopping Cart" page
+    Given   I am at shopping cart page "http://cart.payments.ebay.ca/sc/view"
      When   I edit the quantity to "5" and click update
      Then   It will reload the page and show the new quantity "5"
   
   Scenario: Place 'Oster White 8 Speed Blender - BLSTMG-W00-033' in the shopping cart with less than 1
-    Given   I am at ebay product page for the Oster blender "http://www.ebay.ca/itm/161728962861"
+    Given   I am on ebay product page for the Oster blender "http://www.ebay.ca/itm/161728962861"
      When   I input a quantity of "-2"
      Then   It should indicate error "Please enter quantity of 1 or more"
