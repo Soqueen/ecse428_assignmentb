@@ -54,8 +54,7 @@ def verify_product(step, expected_result):
 def verify_quantify(step, expected_result):
 	actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input').get_attribute('value')
 	assert_equals(expected_result, actual_result)
-	driver.quit()
-
+	
 # 2. Alternative Flow
 @step(u'I am at shopping cart page "([^"]*)"')
 def get_to_cart_page(step,url):
@@ -67,12 +66,13 @@ def edit_quantity(step, quant):
 	search_box = driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input')
 	search_box.clear()
 	search_box.send_keys(quant)
-	driver.find_element_by_xpath('//*[@id="ul_1999554143"]').click()
+	driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/div/a').click()
 
-@step(u'Its quantity equal to "([^"]*)"')
+@step(u'It will reload the page and show the new quantity "([^"]*)"')
 def two_verify_quantify(step, expected_result):
-	driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input').get_attribute('value')
+	actual_result = driver.find_element_by_xpath('//*[@id="161728962861_title"]/parent::*/parent::*/parent::*/parent::*/div[2]/div[1]/div/input').get_attribute('value')
 	assert_equals(expected_result, actual_result)
+
 
 # 3. Error Flow
 @step(u'I am on ebay product page for the Oster blender "([^"]*)"')
@@ -80,7 +80,7 @@ def c_get_product_page(step, url):
     driver.get(url)
 
 
-@step(u'I input a quantity of "([^"]*)"')
+@step(u'I input an invalid quantity of "([^"]*)"')
 def c_add_negative_quantity(step, quant):
     search_box = driver.find_element_by_id('qtyTextBox')
     search_box.clear()
@@ -88,6 +88,6 @@ def c_add_negative_quantity(step, quant):
 
 @step(u'It should indicate error "([^"]*)"')
 def display_error(step, expected_error):
-    actual_error = driver.find_element_by_id('w1-14-_errMsg').text
+    actual_error = driver.find_element_by_id('w1-13-_errMsg').text
     assert_equals(expected_error, actual_error)
     driver.quit()

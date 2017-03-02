@@ -16,5 +16,5 @@ As a consumer I want to be able to place the Oster blender in my shopping cart s
   
   Scenario: Place 'Oster White 8 Speed Blender - BLSTMG-W00-033' in the shopping cart with less than 1
     Given   I am on ebay product page for the Oster blender "http://www.ebay.ca/itm/161728962861"
-     When   I input a quantity of "-2"
+     When   I input an invalid quantity of "-2"
      Then   It should indicate error "Please enter quantity of 1 or more"
