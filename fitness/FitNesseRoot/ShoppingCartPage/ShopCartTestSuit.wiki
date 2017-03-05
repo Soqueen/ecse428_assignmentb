@@ -5,4 +5,6 @@ Suite
 
 Class Path
 !path /Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/Libraries/selenium-server-standalone-3.2.0.jar
-!path /Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/ShopCart/bin/
+!path /Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/Libraries/ShopCartFitness.jar
+
+#!path /Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/ShopCart/bin/

@@ -21,10 +21,47 @@ public class FitnessTestShopCart {
 		} else if (browser.equalsIgnoreCase("*firefox")) {
 			driver = new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("*chrome")) {
-
-			System.setProperty(
-					"webdriver.chrome.driver",
-					"/Users/sokhenglim/Desktop/ecse428_assignmentb/cucumber/tests/features/chrome_driver/chromedriver_mac");
+			String osName = System.getProperty("os.name");
+			String user = System.getProperty("user.home");
+			// You can change where you store the assignment project
+			String storeDoc = "Desktop";
+			if (osName.startsWith("Mac"))
+				System.setProperty(
+						"webdriver.chrome.driver",
+						user 
+						+ System.getProperty("file.separator") 
+						+ storeDoc
+						+ System.getProperty("file.separator")
+						+ "ecse428_assignmentb"
+						+ System.getProperty("file.separator")
+						+ "cucumber"
+						+ System.getProperty("file.separator") 
+						+ "tests"
+						+ System.getProperty("file.separator")
+						+ "features"
+						+ System.getProperty("file.separator")
+						+ "chrome_driver"
+						+ System.getProperty("file.separator")
+						+ "chromedriver_mac");
+			else{
+				System.setProperty(
+						"webdriver.chrome.driver",
+						user 
+						+ System.getProperty("file.separator") 
+						+ storeDoc
+						+ System.getProperty("file.separator")
+						+ "ecse428_assignmentb"
+						+ System.getProperty("file.separator")
+						+ "cucumber"
+						+ System.getProperty("file.separator") 
+						+ "tests"
+						+ System.getProperty("file.separator")
+						+ "features"
+						+ System.getProperty("file.separator")
+						+ "chrome_driver"
+						+ System.getProperty("file.separator")
+						+ "chromedriver");
+			}
 			driver = new ChromeDriver();
 		}
 	}
