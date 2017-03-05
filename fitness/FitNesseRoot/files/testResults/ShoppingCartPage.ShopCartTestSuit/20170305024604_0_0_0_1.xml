@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20161106</FitNesseVersion>
+  <rootPath>ShoppingCartPage.ShopCartTestSuit</rootPath>
+  <pageHistoryReference>
+    <name>ShoppingCartPage.ShopCartTestSuit.NormalFlow</name>
+    <date>2017-03-05T02:46:05-05:00</date>
+    <pageHistoryLink>ShoppingCartPage.ShopCartTestSuit.NormalFlow?pageHistory&amp;resultDate=20170305024605</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>8</exceptions>
+    </counts>
+    <runTimeInMillis>166</runTimeInMillis>
+  </pageHistoryReference>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/fitnesse-standalone.jar:/Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/Libraries/selenium-server-standalone-3.2.0.jar:/Users/sokhenglim/Desktop/ecse428_assignmentb/fitness/ShopCart/bin/ fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>624</totalRunTimeInMillis>
+</suiteResults>
+

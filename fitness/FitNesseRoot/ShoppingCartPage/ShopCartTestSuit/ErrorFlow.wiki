@@ -1,0 +1,9 @@
+---
+Help: Scenario: Place 'Oster White 8 Speed Blender - BLSTMG-W00-033' in the shopping cart with less than 1
+Test
+---
+| script | fitness test shop cart | *chrome | 
+| open | www.ebay.ca/itm/161728962861 |
+| type; | qtyTextBox | -1 |
+| verify Error Message; | Please enter quantity of 1 or more | w1-13-_errMsg |
+| close |
