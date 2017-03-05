@@ -1,4 +1,4 @@
-Feature: Place Oster blender in shopping cart (Functional)
+Feature: Place Oster blender in shopping cart
 
   As a consumer I want to be able to place the Oster blender in my shopping cart so I can purchase that blender as a part of my future order.
 
